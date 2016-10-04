@@ -11,19 +11,19 @@
 <body>
 <main class="container">
     <h2>User Login</h2>
-    <form method="POST" action="http://requestb.in/1l9ds5t1">
+    <form class="form-horizontal" method="POST" action="http://requestb.in/1l9ds5t1">
 
-            <div class="row">
+            <div class="form-group">
                 <div class="col-md-1"><label for="username">Username</label></div>
                 <div class="col-md-4"><input class="form-control" id="username" name="username" type="text"></div>
             </div>
 
-            <p><div class="row">
+            <div class="form-group">
                 <div class="col-md-1"><label for="password">Password</label></div>
                 <div class="col-md-4"><input class="form-control" id="password" name="password" type="password"></div>
-            </div></p>
-        <p>
-            <button class="btn btn-primary">Submit</button>
+            </div>
+
+            <p><button class="btn btn-primary">Submit</button></p>
 
 
     </form>
@@ -48,9 +48,9 @@
             <textarea class="form-control" id="email_body" name="email_body" rows="10" cols="40" placeholder="Compose an Email"></textarea>
         </p>
         <label for="save">Save a copy to sent folder?</label>
-        <input class="form-control" type="checkbox" id="save" name="save" value="yes" checked>
+        <input type="checkbox" id="save" name="save" value="yes" checked>
         <p>
-            <button type="submit">Send</button>
+            <button class="btn btn-primary" type="submit">Send</button>
         </p>
     </form>
     <form method="POST" action="http://requestb.in/18cu39n1">
@@ -104,7 +104,7 @@
     </form>
 </main>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="js/bootstrap.min.js"></script>
 </body>
