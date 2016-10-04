@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My first form</title>
+</head>
+<body>
+<h2>User Login</h2>
+<form method="POST" action="http://requestb.in/1l9ds5t1">
+    <p>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text">
+    </p>
+    <p>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password">
+    </p>
+    <p>
+        <input type="submit">
+
+
+</form>
+<h2>Compose an Email</h2>
+<form Method="POST" action="http://requestb.in/1l9ds5t1">
+    <p>
+        <label for="to">To:</label>
+        <input id="to" name="to" type="text">
+    </p>
+
+    <p>
+        <label for="from">From:</label>
+        <input id="from" name="from" type="text">
+    </p>
+
+    <p>
+        <label for="subject">Subject:</label>
+        <input id="subject" name="subject" type="text">
+    </p>
+
+    <p>
+        <textarea for="email_body" name="email_body" rows="10" cols="40" placeholder="Compose an Email"></textarea>
+    </p>
+    <label for="save">Save a copy to sent folder?</label>
+    <input type="checkbox" id="save" name="save" value="yes" checked>
+    <p>
+        <button type="submit">Send</button>
+    </p>
+</form>
+<form method="POST" action="http://requestb.in/18cu39n1">
+    <h1>Multiple Choice Test</h1>
+    <p>What is my name?</p>
+    <label>
+        <input type="radio" name="q1" value="jack">Jack
+    </label>
+    <label>
+        <input type="radio" name="q1" value="andrew">Andrew
+    </label>
+    <label>
+        <input type="radio" name="q1" value="anthony">Anthony
+    </label>
+    <lable>
+        <input type="radio" name="q1" value="james">James
+    </lable>
+    <p>Where am I from?</p>
+    <lable>
+        <input type="radio" name="q2" value="ohio">Ohio
+    </lable>
+    <label>
+        <input type="radio" name="q2" value="west virginia">West Virginia
+    </label>
+    <lable>
+        <input type="radio" name="q2" value="pennsylvania">Pennsylvania
+    </lable>
+    <label>
+        <input type="radio" name="q2" value="maryland"> Maryland
+    </label>
+
+    <p><label for="os">What Operating systems have you used?</label>
+    <select id="os" name="os[]" multiple>
+        <option value="linux">Linux</option>
+        <option value="osx"> OS X</option>
+        <option value="windows">Windows</option>
+        </select>
+        </p>
+    <p>
+        <button type="submit">submit</button>
+    </p>
+</form>
+<form method="POST" action="http://requestb.in/18cu39n1">
+    <h2>Select testing</h2>
+    <label for="pizza">Do you like Pizza?</label>
+    <select id="pizza" name="pizza">
+    <option selected value="1">Yes</option>
+    <option value="0">No</option>
+    </select>
+    <button type="submit">submit</button>
+</form>
+</body>
+</html>

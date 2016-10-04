@@ -1,0 +1,28 @@
+h1, h2{
+    color: cornflowerblue;
+    Text-decoration: underline;
+}
+
+body{
+    font-family: 'Pavanam', serif;
+    background-image: url("../Images/cork-wallet.png");
+}
+
+ol {
+    list-style: upper-roman;
+}
+
+ul{
+    list-style: circle;
+}
+
+th{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+th, td{
+    padding: 2px;
+    border-left: solid 6px darkslateblue;
+    background-color: azure;
+}
