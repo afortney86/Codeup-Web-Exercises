@@ -12,16 +12,18 @@
 <main class="container">
     <h2>User Login</h2>
     <form method="POST" action="http://requestb.in/1l9ds5t1">
+
+            <div class="row">
+                <div class="col-md-1"><label for="username">Username</label></div>
+                <div class="col-md-4"><input class="form-control" id="username" name="username" type="text"></div>
+            </div>
+
+            <p><div class="row">
+                <div class="col-md-1"><label for="password">Password</label></div>
+                <div class="col-md-4"><input class="form-control" id="password" name="password" type="password"></div>
+            </div></p>
         <p>
-            <label for="username">Username</label>
-            <input id="username" name="username" type="text">
-        </p>
-        <p>
-            <label for="password">Password</label>
-            <input id="password" name="password" type="password">
-        </p>
-        <p>
-            <input type="submit">
+            <button class="btn btn-primary">Submit</button>
 
 
     </form>
@@ -29,24 +31,24 @@
     <form Method="POST" action="http://requestb.in/1l9ds5t1">
         <p>
             <label for="to">To:</label>
-            <input id="to" name="to" type="text">
+            <input class="form-control" id="to" name="to" type="text">
         </p>
 
         <p>
             <label for="from">From:</label>
-            <input id="from" name="from" type="text">
+            <input class="form-control" id="from" name="from" type="text">
         </p>
 
         <p>
             <label for="subject">Subject:</label>
-            <input id="subject" name="subject" type="text">
+            <input class="form-control" id="subject" name="subject" type="text">
         </p>
 
         <p>
-            <textarea id="email_body" name="email_body" rows="10" cols="40" placeholder="Compose an Email"></textarea>
+            <textarea class="form-control" id="email_body" name="email_body" rows="10" cols="40" placeholder="Compose an Email"></textarea>
         </p>
         <label for="save">Save a copy to sent folder?</label>
-        <input type="checkbox" id="save" name="save" value="yes" checked>
+        <input class="form-control" type="checkbox" id="save" name="save" value="yes" checked>
         <p>
             <button type="submit">Send</button>
         </p>
