@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link href="cssbootstrap/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>The new Layout</title>
+
+    <style>
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+
+        }
+
+        #left{
+            height: 100%;
+            min-height: 100%;
+            background-color: #999f8e;
+            position: relative;
+        }
+
+        #right{
+            height: 100%;
+            min-height: 100%;
+            background-color: #d2d8c7;
+            position: relative;
+        }
+
+        h1{
+            color: green;
+        }
+
+        .container {
+            min-height: 100%;
+        }
+
+        .italic{
+            font-style: italic;
+        }
+
+
+        </style>
+</head>
+
+
+<!--<body style="margin: 0px; padding: 0px; font-family: 'Trebuchet MS',verdana;">-->
+<body>
+    <main class="container">
+<!--<table width="100%" style="height: 100%;" cellpadding="10" cellspacing="0" border="0"><tr>-->
+
+    <!-- ============ LEFT COLUMN (MENU) ============== -->
+    <div class="col-sm-4" id="left">
+        <a href="#">Menu link</a><br>
+        <a href="#">Menu link</a><br>
+        <a href="#">Menu link</a><br>
+        <a href="#">Menu link</a><br>
+        <a href="#">Menu link</a>
+    </div>
+
+    <!-- ============ RIGHT COLUMN (CONTENT) ============== -->
+    <div class="col-sm-8" id="right">
+
+        <h1>Website Logo</h1>
+
+        <h2>Page heading</h2>
+
+
+        <p>This is a basic two-column web page layout. The left column or the <span class="italic">menu column</span> is a narrow band of space (usually between 15-25% of the page width) and is reserved for a menu of hyperlinks leading to other pages on your website. The table used to create this layout employs a single table row containing two table cells.</p>
+
+
+        <p>The right column or the <span class="italic">content column</span>> takes up the lion's share of the web page width and contains the actual content of each particular page. In a basic two column layout like this, it is common to place the website logo at the top of the content column on each page.</p></div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+        </main>
+</body>
+</html>
