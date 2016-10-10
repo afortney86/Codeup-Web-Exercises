@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Loop</title>
+</head>
+<body>
+    <script>
+        "use strict";
+
+        /*for(var i = 1; i <= 10; i++)
+            var string = i.toString();
+
+
+        console.log(string.repeat(i));*/
+
+
+
+
+        //Write the JS code to log to the console the multiplication table for a random number between 1 and 10. Finished
+
+        var randomNum = Math.floor(Math.random()* 10 + 1)
+
+        for (var e = 1; e <= 10; e++) {
+            console.log(randomNum + "x" + e + "=" + (randomNum * e))
+
+            }
+
+        //Using a for loop and the code to generate a random number from the previous lessons, generate 10 random numbers between 20 and 200 and output to the console whether each number is odd or even. (finished)
+
+        for (var i = 1; i <= 10; i++) {
+            var randomNumber = Math.floor(Math.random() * 180) + 20;
+            if (randomNumber % 2 == 0)
+                console.log(randomNumber + "is even.");
+            else {
+                console.log(randomNumber + "is odd.");
+            }
+        }
+
+            //subtract in 5 incraments (finished)
+            for (var x = 100; x >= 5; x = x - 5) {
+                console.log('for loop iteration #' + x);
+            }
+
+    </script>
+
+</body>
+</html>

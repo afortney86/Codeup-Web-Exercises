@@ -1,6 +1,7 @@
 /**
  * Created by anthonyfortney on 10/7/16.
  */
+"use strict"
 
 var luckyNumber = Math.floor(Math.random()* 6);
 var receipt = 60;
@@ -28,7 +29,6 @@ var receipt = 60;
 
 switch (luckyNumber) {
     case 0:
-
         console.log("No discount for you >.<");
         break;
     case 1:
@@ -57,12 +57,10 @@ switch (luckyNumber) {
 
 
 
-var monthsOfTheYear = Math.floor(Math.random()* 13)
+var monthsOfTheYear = Math.floor(Math.random()* 12 + 1);
 
 switch (monthsOfTheYear){
-    case 0:
-        console.log("No month");
-        break;
+
     case 1:
         console.log("January");
         break;

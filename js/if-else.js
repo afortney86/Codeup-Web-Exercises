@@ -39,7 +39,7 @@ var ryanAmount = 250
 var cameronAmount = 180
 var georgeAmount = 320
 var minimumAmount = 200
-var ryanTotal = ;
+var ryanTotal =
 
 if(ryanAmount > minimumAmount) {
     ryanTotal = ryanAmount * discount - ryanAmount
