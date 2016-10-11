@@ -2,13 +2,10 @@
 
 // TODO: Ask the user for their name.
 //       Keep asking if an empty input is provided.
-        var userName = "";
-        while (userName.length < 1) {
-            userName = prompt("Welcome! What is your name?")
-        }
-
-
-
+        var userName;
+        do {
+            userName = prompt("Welcome! what is your name?");
+        }while (userName == null || userName.trim() == "");
 
 // TODO: Show an alert message that welcomes the user based on their input.
 

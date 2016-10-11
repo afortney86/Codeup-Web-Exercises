@@ -1,8 +1,8 @@
-/**
- * Created by anthonyfortney on 10/6/16.
+/*
+ Created by anthonyfortney on 10/6/16.
  */
 
-"use strict"
+"use strict";
 
 /*var grades = [70, 80, 90];
 
@@ -35,10 +35,10 @@ if (average > 80) {
 
 var discount = .20;
 
-var ryanAmount = 250
-var cameronAmount = 180
-var georgeAmount = 320
-var minimumAmount = 200
+var ryanAmount = 250;
+var cameronAmount = 180;
+var georgeAmount = 320;
+var minimumAmount = 200;
 var ryanTotal =
 
 if(ryanAmount > minimumAmount) {
