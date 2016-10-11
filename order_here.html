@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Order Here</title>
+    <link href="cssbootstrap/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: #4cae4c;
+        }
+    </style>
+
+</head>
+<body>
+    <main class="container panel panel-default">
+        <h1>Order Here</h1>
+        <form class="form-horizontal">
+            <!--Make Required-->
+            <div class="form-group">
+                <label class="col-sm-2 control-label">First name</label>
+                <div class="col-sm-10">
+                    <input class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Last name</label>
+                <div class="col-sm-10">
+                    <input class="form-control">
+                </div>
+             </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Address</label>
+                <div class="col-sm-10">
+                    <input class="form-control">
+                </div>
+            </div>
+
+            <div class="row">
+                <div><label class="control-label">City</label>
+                    <div class="col-sm-1">
+                        <input class="form-control">
+                     </div>
+
+                <label class="control-label">State</label>
+                    <div class="col-sm-1">
+                        <select class="form-control">
+                            <option>North</option>
+                            <option>East</option>
+                            <option>South</option>
+                            <option>West</option>
+                        </select>
+                    </div>
+
+                <label class="control-label">Zip code</label>
+                    <div class="col-sm-1">
+                        <input class="form-control">
+                    </div>
+            </div>
+
+            <h3>Size</h3>
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="small">Small
+                </label>
+
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="medium">Medium
+                </label>
+
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="large">Large
+                </label>
+
+                <label class="radio-inline">
+                    <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="Xtra-large">Xtra Large
+                </label>
+
+
+            <!-- List toppings inputs (checkboxes)-->
+            <h3>Toppings:</h3>
+                <div class="col-sm-2">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="t1">Topping1
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="t2">Topping2
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="t3">Topping3
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="t4">Topping4
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="t5">Topping5
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="t6">Topping6
+                        </label>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="t7">Topping7
+                        </label>
+                     </div>
+                </div>
+
+            <div class="col-sm-10">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="t1">Topping1
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="t2">Topping2
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="t3">Topping3
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="t4">Topping4
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="t5">Topping5
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="t6">Topping6
+                    </label>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" value="t7">Topping7
+                    </label>
+                </div>
+            </div class="checkbox">
+            <!--Special Instructions text area-->
+            <h3>Special Instructions</h3>
+            <textarea class="form-control" rows="6"></textarea>
+
+
+        </form>
+    </main>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
