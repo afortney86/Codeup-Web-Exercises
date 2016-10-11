@@ -20,7 +20,7 @@ else if (avg > 80){
     console.log("You are awesome!");
 }*/
 
-var gradeOne = 70;
+/* var gradeOne = 70;
 var gradeTwo = 80;
 var gradeThree = 95;
 var numberOfGrades = 3;
@@ -31,7 +31,7 @@ if (average > 80) {
     console.log("You are Awesome!")
 } else {
     console.log("You need to Practice!")
-}
+}*/
 
 var discount = .20;
 
@@ -39,10 +39,10 @@ var ryanAmount = 250;
 var cameronAmount = 180;
 var georgeAmount = 320;
 var minimumAmount = 200;
-var ryanTotal =
+var ryanTotal;
 
 if(ryanAmount > minimumAmount) {
-    ryanTotal = ryanAmount * discount - ryanAmount
+    ryanTotal = ryanAmount * discount - ryanAmount;
         console.log()
 }   else {
 
@@ -53,7 +53,7 @@ if(ryanAmount > minimumAmount) {
 
 
 
-var flipACoin = Math.floor(Math.random()* 2)
+var flipACoin = Math.floor(Math.random()* 2);
 
 if (flipACoin == 0) {
     console.log("Buy a House")
