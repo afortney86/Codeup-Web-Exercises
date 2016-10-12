@@ -14,20 +14,14 @@
     console.log("The third name is: " + names [2]);
     console.log("The fourth name is: " + names [3]);
 
-    //Exercise 1
-    for(var i = 0; i < names.length; 1++)
-        console.log(names[i]);
+    for (var i = 0; i < names.length; i++)
+        console.log(names)
 
-    //Exercise 2
+    names.forEach(function (element, index, array) {
+        console.log("The name at index " + index + " is " + element);
+    });
 
-  /* var grades = []
-    function average(grades) {
-        //use a for loop to iterate through the array and get the average
-        var sum = 0
-        for(var i = 0; i < grades.length; i++){
-            sum = sum + grades
-        }
-    }
-    var grade = average(grades)
-    console.log("you made a grade of " + grade);*/
+
+
+
 })();
