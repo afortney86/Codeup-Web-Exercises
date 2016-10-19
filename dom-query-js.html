@@ -8,7 +8,7 @@
 
 <h1 id="main-header">Hello World!</h1>
 
-    <button id="btn1">JavaScript is Cool!</button>
+    <button id="change-header-text">JavaScript is Cool!</button>
 
 <ul>
     <li data-dbid="1">Item 1</li>
@@ -18,11 +18,11 @@
     <li data-dbid="5">Item 5</li>
 </ul>
 
-    <button id="btn2">Fancy list!</button>
+    <button id="change-items-color">Fancy list!</button>
 
 <h2 id="sub-header">Hello Again.</h2>
 
-    <button id="btn3">Feeling Blue?</button>
+    <button id="change-header-color">Feeling Blue?</button>
 
 <p class="sub-paragraph">
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
@@ -34,43 +34,58 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
-    <button id="btn4">Mission Accomplished!</button>
+    <button id="change-paragraph-text">Mission Accomplished!</button>
 
 <script>
     (function () {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         var mainHeader = document.getElementById('main-header');
-
+        var button1 = document.getElementById('change-header-text');
+        var jsic = function () {
+            mainHeader.innerHTML = "Javascript is cool";
+        };
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML = "Javascript is cool";
+        button1.addEventListener('click', jsic, false);
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
-
+        var button2 = document.getElementById('change-header-color');
+        var feelblue = function () {
+            subHeader.style.color = '#0000ff';
+        };
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = '#0000ff';
+        button2.addEventListener('click', feelblue, false);
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
+        var button3 = document.getElementById('change-items-color');
+        var fancylist = function () {
+            for (var i = 0; i < listItems.length; i++) {
+                var dbId = listItems[i].attributes['data-dbid'].value;
+                if (dbId == '1') {
+                    listItems[i].style.color = '#0000ff';
+                } else if (i % 2 == 1) {
+                    listItems[i].style.color = '#808080';
+                }
+            }
+
+        };
 
         // TODO: Set text color on every other list item to grey
         // TODO: Set text color of li with dbid = 1 to blue
-
-        for (var i = 0; i < listItems.length; i++) {
-            var dbId = listItems[i].attributes['data-dbid'].value;
-            if (dbId == '1') {
-                listItems[i].style.color = '#0000ff';
-            } else if (i % 2 == 1) {
-                listItems[i].style.color = '#808080';
-            }
-        }
+        button3.addEventListener('click', fancylist, false);
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName('sub-paragraph');
+        var button4 = document.getElementById('change-paragraph-text');
+        var mission = function () {
+            subParagraphs[0].innerHTML = 'Missions Accomplished';
+        };
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerHTML = 'Missions Accomplished';
+        button4.addEventListener('click', mission, false);
+
     })();
 </script>
 </body>
