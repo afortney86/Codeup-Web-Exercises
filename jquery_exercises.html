@@ -5,24 +5,24 @@
     <title>JQuery Exercises</title>
 </head>
 <body>
-<h1 id="head" class="things">Hello World!</h1>
-<p id="para">I am a paragraph</p>
+<h1 id="head" class="codeup">Hello World!</h1>
+<p id="para" class="codeup">I am a paragraph</p>
 <ul id="listOne">
     <li class="listItem">List item one.</li>
     <li class="ListItem">List item two.</li>
 </ul>
 
-<div id="almighty" class="things">I am the almighty div!</div>
+<div id="almighty" class="codeup">I am the almighty div!</div>
 
 
 
 <script src="jsbootstrap/jquery.min.js"></script>
 <script>
-   // window.onload = function() {
-   //     alert( 'The page has finished loading!' );
-   // }
-    var contents = $('#almighty').html();
-    alert(contents);
+    var $codeup = $('.codeup');
+
+    $codeup.css({'border-color': '#F00',
+                'border-width': '1px',
+                'border-style': 'solid'});
 
 </script>
 </body>
