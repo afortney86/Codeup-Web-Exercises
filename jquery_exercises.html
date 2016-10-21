@@ -2,17 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>JQuery Exercises</title>
 </head>
 <body>
-<h1>Hello World!</h1>
+<h1 id="head" class="things">Hello World!</h1>
+<p id="para">I am a paragraph</p>
+<ul id="listOne">
+    <li class="listItem">List item one.</li>
+    <li class="ListItem">List item two.</li>
+</ul>
+
+<div id="almighty" class="things">I am the almighty div!</div>
+
 
 
 <script src="jsbootstrap/jquery.min.js"></script>
 <script>
-    window.onload = function() {
-        alert( 'The page has finished loading!' );
-    }
+   // window.onload = function() {
+   //     alert( 'The page has finished loading!' );
+   // }
+    var contents = $('#almighty').html();
+    alert(contents);
 
 </script>
 </body>
