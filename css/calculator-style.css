@@ -16,7 +16,7 @@ body{
     background-color: white;
     height: 50px;
     width: 70px;
-    font-size: 20px;
+    font-size: 30px;
     margin: 1%;
     border-radius: 5px;
     color: grey;
@@ -24,34 +24,34 @@ body{
 }
 
 #leftInput{
-    height: 50px;
+    height: 60px;
     width: 125px;
     text-align: center;
-    background-color: dimgray;
+    background-color: #3c3c3c;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     margin: 1% 0 1% 0;
     border-radius: 10px;
 }
 
 #midInput{
-    height: 50px;
+    height: 60px;
     width: 40px;
     text-align: center;
-    background-color: dimgray;
+    background-color: #3c3c3c;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     margin: 1% 0 1% 0;
     border-radius: 10px;
 }
 
 #rightInput{
-    height: 50px;
+    height: 60px;
     width: 125px;
     text-align: center;
-    background-color: dimgray;
+    background-color: #3c3c3c;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
     margin: 1% 0 1% 0;
     border-radius: 10px;
 }
