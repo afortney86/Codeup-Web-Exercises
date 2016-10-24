@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>Frequently asked questions about Yellowstone.</h1>
+    <h3>Yellowstone.</h3>
 
     <dl>
         <dt>How did Yellowstone get its name?</dt>
@@ -39,19 +39,51 @@
             –66°F (–54°C) at Riverside Ranger Station, near the West Entrance, on February 9, 1933.
         </dd>
     </dl>
+
+    <a href="#" id="answers">Click to reveal answers!</a>
+    <hr>
+
+    <h3>National Park 1</h3>
+    <ul class="facts">
+        <li>Fun Fact!</li>
+        <li>Fun Fact!</li>
+        <li>Fun Fact!</li>
+        <li>Fun Fact!</li>
+    </ul>
+    <h3>National Park 2</h3>
+    <ul class="facts">
+        <li>Fun Fact!</li>
+        <li>Fun Fact!</li>
+        <li>Fun Fact!</li>
+        <li>Fun Fact!</li>
+    </ul>
+    <h3>National park 3</h3>
+    <ul class="facts">
+        <li>Fun Fact!</li>
+        <li>Fun Fact!</li>
+        <li>Fun Fact!</li>
+        <li>Fun Fact!</li>
+    </ul>
 </div>
 
-<a href="#" id="answers">Click to reveal answers!</a>
 <script src="jsbootstrap/bootstrap.min.js"></script>
 <script src="jsbootstrap/jquery.min.js"></script>
 <script>
     "use strict";
 
 
-        $('#answers').click(function (event) {
-            event.preventDefault();
-            $('dd').toggleClass('invisible');
-        });
+    $('#answers').click(function (event) {
+        event.preventDefault();
+        $('dd').toggleClass('invisible');
+    });
+    $('ul').each(function () {
+        $(this).children().first().css('font-weight', 'bold');
+    });
+    $('ul').click(function (event) {
+        event.preventDefault();
+        $(this).addClass('invisible');
+    });
+
 
 </script>
 </body>
