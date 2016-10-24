@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yellowstone FAQ's</title>
+    <link href="cssbootstrap/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+        .invisible {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Frequently asked questions about Yellowstone.</h1>
+
+    <dl>
+        <dt>How did Yellowstone get its name?</dt>
+        <dd class="invisible">
+            Yellowstone National Park is named after the Yellowstone River, the major river running through the park.
+        </dd>
+        <dt>Is Yellowstone the most visited national park?</dt>
+        <dd class="invisible">
+            Yellowstone is in the top five national parks for number of recreational visitors. Great Smoky Mountains
+            National Park has the most—more than 10 million in 2014.
+        </dd>
+        <dt>How many rangers work in Yellowstone?</dt>
+        <dd class="invisible">
+            Approximately 773 people work for the National Park Service during the peak summer season.
+        </dd>
+        <dt>What is the highest peak in the park?</dt>
+        <dd class="invisible">
+            Eagle Peak in the southeastern part of Yellowstone is the highest at 11,358 feet.
+        </dd>
+        <dt>How cold is Yellowstone in winter?</dt>
+        <dd class="invisible">
+            Average winter highs are 20–30ºF (–6 to –1ºC);average lows are 0–9ºF (–17 to –13ºC). The record low was
+            –66°F (–54°C) at Riverside Ranger Station, near the West Entrance, on February 9, 1933.
+        </dd>
+    </dl>
+</div>
+
+<a href="#" id="answers">Click to reveal answers!</a>
+<script src="jsbootstrap/bootstrap.min.js"></script>
+<script src="jsbootstrap/jquery.min.js"></script>
+<script>
+    "use strict";
+
+
+        $('#answers').click(function (event) {
+            event.preventDefault();
+            $('dd').toggleClass('invisible');
+        });
+
+</script>
+</body>
+</html>
