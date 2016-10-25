@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="container">
-    <h3>Yellowstone.</h3>
+    <h3 id="yellowstoneToggle">Yellowstone</h3>
 
     <dl>
         <dt>How did Yellowstone get its name?</dt>
@@ -76,12 +76,12 @@
         event.preventDefault();
         $('dd').toggleClass('invisible');
     });
-    $('ul').each(function () {
-        $(this).children().first().css('font-weight', 'bold');
+    $('ul').each(function (index, element) {
+        $(element).children().first().css('font-weight', 'bold');
     });
-    $('ul').click(function (event) {
+    $('li').click(function (event) {
         event.preventDefault();
-        $(this).addClass('invisible');
+        $(this).parent().addClass('invisible');
     });
 
 
