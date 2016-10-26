@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+</head>
+<body>
+<div id="insertPosts">
+
+</div>
+<div></div>
+<script src="jsbootstrap/jquery.min.js"></script>
+<script>
+    var blogPost = "";
+    var request = $.get("data/blog.json");
+    request.fail(function (error) {
+       // console.log(error);
+    });
+    request.done(function (response) {
+          //  console.log(response);
+        response.forEach(function (post) {
+          //  console.log(post);
+        blogPost += "<div>" + post.title + post.content + "</div>";
+            $("#insertPosts").html(blogPost)
+
+        })
+
+    });
+</script>
+</body>
+</html>
