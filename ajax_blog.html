@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Ajax Blog</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Blog Blog</title>
+    <link href="cssbootstrap/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div id="insertPosts">
+<h1>Day in the life of a coding n00b!</h1>
+<div id="insertPosts" class="container">
 
 </div>
 <div></div>
@@ -20,7 +25,7 @@
           //  console.log(response);
         response.forEach(function (post) {
           //  console.log(post);
-        blogPost += "<div>" + post.title + post.content + "</div>";
+        blogPost += "<div>" + "<h1>" + post.title + "</h1>" + "<h3>" + post.date + "</h3>" + "<h4>" + post.categories + "</h4>" + post.content + "</div>";
             $("#insertPosts").html(blogPost)
 
         })
