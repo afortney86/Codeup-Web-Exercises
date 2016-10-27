@@ -8,18 +8,19 @@
     <title>Weather Map</title>
     <link href="cssbootstrap/bootstrap.min.css" rel="stylesheet">
     <style>
-        body{
+        body {
             background-color: #9acfea;
         }
-        .col-sm-4{
+
+        .col-sm-4 {
             background-color: azure;
         }
     </style>
 </head>
 <body>
 <div class="container">
-<h1>Weather Application</h1>
-<h3 id="currentCity"></h3>
+    <h1>Weather Application</h1>
+    <h3 id="currentCity"></h3>
 
     <div class="row">
         <div id="weather1" class="col-sm-4"><h1>Weather!</h1></div>
@@ -32,47 +33,55 @@
 <script src="jsbootstrap/jquery.min.js"></script>
 <script src="jsbootstrap/bootstrap.min.js"></script>
 <script>
-    var w1contents = "";
-    var getWeather = $.get("http://api.openweathermap.org/data/2.5/weather", {
+    var getWeather = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
         APPID: "c3ac1b4c5aea15248441193972cd67cc",
-        q:     "San Antonio, TX",
-        units: "imperial"
+        q: "San Antonio, TX",
+        units: "imperial",
+        cnt: 3
     });
     //making sure request goes through
-        getWeather.fail(function(error) {
-            console.log(error)
-        });
+    getWeather.fail(function (error) {
+        console.log(error)
+    });
     //Request goes through, doSomething!
-        getWeather.done(function(data) {
-            console.log(data);
-            $("#currentCity").html(data.name);
-            var getIcon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
-            console.log();
+    getWeather.done(function (data) {
+        console.log(data);
+        $("#currentCity").html(data.city.name);
+//            var getIcon = '<img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png">';
+//            console.log(getIcon);
+//            data.list.forEach(function (day, index) {
+//               $("#weather" + index).html()
+//            });
+        var w1contents = "";
+        var w2contents = "";
+        var w3contents = "";
 
-            w1contents += "<p>Temp: " + Math.round(data.main.temp_max) + "/" + Math.round(data.main.temp_min) + "</p>"
-                        + "<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>"
-                        + "<p>" + data.weather[0].main + "</p>"
-                        + "<p>Humidity: " + data.main.humidity +"%"+ "</p>"
-                        + "<p>Wind: " + data.wind.speed + "</p>"
-                        + "<p>Pressure: " + data.main.pressure + "</p>";
+        w1contents += "<p>Temp: " + Math.round(data.list[0].temp.max) + "/" + Math.round(data.list[0].temp.min) + "</p>"
+                + "<p>" + '<img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png">' + "</p>"
+                + "<p>" + data.list[0].weather[0].main + "</p>"
+                + "<p>Humidity: " + data.list[0].humidity + "%" + "</p>"
+                + "<p>Wind: " + data.list[0].speed + "</p>"
+                + "<p>Pressure: " + data.list[0].pressure + "</p>";
+
+        w2contents += "<p>Temp: " + Math.round(data.list[1].temp.max) + "/" + Math.round(data.list[1].temp.min) + "</p>"
+                + "<p>" + '<img src="http://openweathermap.org/img/w/' + data.list[1].weather[0].icon + '.png">' + "</p>"
+                + "<p>" + data.list[1].weather[0].main + "</p>"
+                + "<p>Humidity: " + data.list[1].humidity + "%" + "</p>"
+                + "<p>Wind: " + data.list[1].speed + "</p>"
+                + "<p>Pressure: " + data.list[1].pressure + "</p>";
+
+        w3contents += "<p>Temp: " + Math.round(data.list[2].temp.max) + "/" + Math.round(data.list[2].temp.min) + "</p>"
+                + "<p>" + '<img src="http://openweathermap.org/img/w/' + data.list[2].weather[0].icon + '.png">' + "</p>"
+                + "<p>" + data.list[2].weather[0].main + "</p>"
+                + "<p>Humidity: " + data.list[2].humidity + "%" + "</p>"
+                + "<p>Wind: " + data.list[2].speed + "</p>"
+                + "<p>Pressure: " + data.list[2].pressure + "</p>";
 
 
-
-
-//            contents += "<div>" + data.main.temp + " / " + data.main.temp_min + "</div><div>"
-//                    + getIcon() + "</div><div>"
-//                    + "Humidity: " + data.main.humidity +"</div><div>"
-//                    + "Wind: " + data.wind.speed + "</div>";
-//            $("#weather1").html(contents);
-
-//                data.weather.forEach(function(information){
-//                    console.log(information);
-//                    contents += "<div>" + information.id + information.main + information.description + "</div>"
-//                });
-            $("#weather1").html(w1contents);
-        });
-
-
+        $("#weather1").html(w1contents);
+        $("#weather2").html(w2contents);
+        $("#weather3").html(w3contents);
+    });
 
 
 </script>
