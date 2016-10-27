@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Weather Map</title>
+    <link href="cssbootstrap/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            background-color: #9acfea;
+        }
+        .col-sm-4{
+            background-color: azure;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>Weather Application</h1>
+<h3 id="currentCity"></h3>
+
+    <div class="row">
+        <div id="weather1" class="col-sm-4"><h1>Weather!</h1></div>
+        <div id="weather2" class="col-sm-4"><h1>Weather!</h1></div>
+        <div id="weather3" class="col-sm-4"><h1>Weather!</h1></div>
+    </div>
+
+</div>
+
+<script src="jsbootstrap/jquery.min.js"></script>
+<script src="jsbootstrap/bootstrap.min.js"></script>
+<script>
+    var w1contents = "";
+    var getWeather = $.get("http://api.openweathermap.org/data/2.5/weather", {
+        APPID: "c3ac1b4c5aea15248441193972cd67cc",
+        q:     "San Antonio, TX",
+        units: "imperial"
+    });
+    //making sure request goes through
+        getWeather.fail(function(error) {
+            console.log(error)
+        });
+    //Request goes through, doSomething!
+        getWeather.done(function(data) {
+            console.log(data);
+            $("#currentCity").html(data.name);
+            var getIcon = "http://openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+            console.log();
+
+            w1contents += "<p>Temp: " + Math.round(data.main.temp_max) + "/" + Math.round(data.main.temp_min) + "</p>"
+                        + "<img src='http://openweathermap.org/img/w/" + data.weather[0].icon + ".png'>"
+                        + "<p>" + data.weather[0].main + "</p>"
+                        + "<p>Humidity: " + data.main.humidity +"%"+ "</p>"
+                        + "<p>Wind: " + data.wind.speed + "</p>"
+                        + "<p>Pressure: " + data.main.pressure + "</p>";
+
+
+
+
+//            contents += "<div>" + data.main.temp + " / " + data.main.temp_min + "</div><div>"
+//                    + getIcon() + "</div><div>"
+//                    + "Humidity: " + data.main.humidity +"</div><div>"
+//                    + "Wind: " + data.wind.speed + "</div>";
+//            $("#weather1").html(contents);
+
+//                data.weather.forEach(function(information){
+//                    console.log(information);
+//                    contents += "<div>" + information.id + information.main + information.description + "</div>"
+//                });
+            $("#weather1").html(w1contents);
+        });
+
+
+
+
+</script>
+</body>
+</html>
