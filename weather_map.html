@@ -7,13 +7,32 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Weather Map</title>
     <link href="cssbootstrap/bootstrap.min.css" rel="stylesheet">
-    <style>
+    <style type="text/css">
         body {
             background-color: #9acfea;
+            margin: auto;
+        }
+
+        .container{
+            margin: auto;
+            height: 75%;
+        }
+
+        #map-canvas {
+            width: 100%;
+            height: 481px;
+            margin-bottom: 10%;
         }
 
         .col-sm-4 {
             background-color: azure;
+            text-align: center;
+
+            border: solid 1px black;
+        }
+        .temp{
+            font-size: 1.5em;
+            font-style: bold;
         }
     </style>
 </head>
@@ -22,66 +41,64 @@
     <h1>Weather Application</h1>
     <h3 id="currentCity"></h3>
 
-    <div class="row">
-        <div id="weather1" class="col-sm-4"><h1>Weather!</h1></div>
-        <div id="weather2" class="col-sm-4"><h1>Weather!</h1></div>
-        <div id="weather3" class="col-sm-4"><h1>Weather!</h1></div>
-    </div>
+    <div id="forcast"></div>
+    <div id="map-canvas"></div>
 
 </div>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhqfWTCQB5VzxX2ZCVijdSw1bPPavXPZ8"></script>
 <script src="jsbootstrap/jquery.min.js"></script>
 <script src="jsbootstrap/bootstrap.min.js"></script>
 <script>
-    var getWeather = $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
-        APPID: "c3ac1b4c5aea15248441193972cd67cc",
-        q: "San Antonio, TX",
-        units: "imperial",
-        cnt: 3
-    });
-    //making sure request goes through
-    getWeather.fail(function (error) {
-        console.log(error)
-    });
-    //Request goes through, doSomething!
-    getWeather.done(function (data) {
-        console.log(data);
-        $("#currentCity").html(data.city.name);
-//            var getIcon = '<img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png">';
-//            console.log(getIcon);
-//            data.list.forEach(function (day, index) {
-//               $("#weather" + index).html()
-//            });
-        var w1contents = "";
-        var w2contents = "";
-        var w3contents = "";
+    (function () {
+        "use strict";
 
-        w1contents += "<p>Temp: " + Math.round(data.list[0].temp.max) + "/" + Math.round(data.list[0].temp.min) + "</p>"
-                + "<p>" + '<img src="http://openweathermap.org/img/w/' + data.list[0].weather[0].icon + '.png">' + "</p>"
-                + "<p>" + data.list[0].weather[0].main + "</p>"
-                + "<p>Humidity: " + data.list[0].humidity + "%" + "</p>"
-                + "<p>Wind: " + data.list[0].speed + "</p>"
-                + "<p>Pressure: " + data.list[0].pressure + "</p>";
+        var myLatlng = new google.maps.LatLng(29.426791, -98.489602);
+        var mapOptions = {
+            zoom: 9,
+            center: myLatlng
+        };
+        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-        w2contents += "<p>Temp: " + Math.round(data.list[1].temp.max) + "/" + Math.round(data.list[1].temp.min) + "</p>"
-                + "<p>" + '<img src="http://openweathermap.org/img/w/' + data.list[1].weather[0].icon + '.png">' + "</p>"
-                + "<p>" + data.list[1].weather[0].main + "</p>"
-                + "<p>Humidity: " + data.list[1].humidity + "%" + "</p>"
-                + "<p>Wind: " + data.list[1].speed + "</p>"
-                + "<p>Pressure: " + data.list[1].pressure + "</p>";
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            draggable: true,
+            title: "Drag me!"
+        });
+        google.maps.event.addListener(marker, 'dragend', function () {
+            getWeather()
+        });
+        function getWeather() {
+            $.get("http://api.openweathermap.org/data/2.5/forecast/daily", {
+                APPID: "c3ac1b4c5aea15248441193972cd67cc",
+                lat: marker.getPosition().lat(),
+                lon: marker.getPosition().lng(),
+                units: "imperial",
+                cnt: 3
+                //making sure request goes through
+            }).fail(function (error) {
+                console.log(error)
+            }).done(function (data) {
+                console.log(data);
+                $("#currentCity").html(data.city.name);
 
-        w3contents += "<p>Temp: " + Math.round(data.list[2].temp.max) + "/" + Math.round(data.list[2].temp.min) + "</p>"
-                + "<p>" + '<img src="http://openweathermap.org/img/w/' + data.list[2].weather[0].icon + '.png">' + "</p>"
-                + "<p>" + data.list[2].weather[0].main + "</p>"
-                + "<p>Humidity: " + data.list[2].humidity + "%" + "</p>"
-                + "<p>Wind: " + data.list[2].speed + "</p>"
-                + "<p>Pressure: " + data.list[2].pressure + "</p>";
+// Would like to attempt a loop. Working on functionality right now
+                var w1contents = "";
+                data.list.forEach(function (forcast) {
+                    w1contents += "<div class='col-sm-4'><p class='temp'>" + Math.round(forcast.temp.max) + "&deg;" + "/" + Math.round(forcast.temp.min) + "&deg;" + "</p>"
+                            + "<p>" + '<img src="http://openweathermap.org/img/w/' + forcast.weather[0].icon + '.png">' + "</p>"
+                            + "<p><strong>" + forcast.weather[0].main + "</strong></p>"
+                            + "<p><strong>Humidity: " + "</strong>" + forcast.humidity + "%" + "</p>"
+                            + "<p><strong>Wind: " + "</strong>" + forcast.speed + "</p>"
+                            + "<p><strong>Pressure: " + "</strong>" + forcast.pressure + "</p></div>";
 
+                });
+                $('#forcast').html(w1contents);
+            });
+        }
 
-        $("#weather1").html(w1contents);
-        $("#weather2").html(w2contents);
-        $("#weather3").html(w3contents);
-    });
+        getWeather()
+    })();
 
 
 </script>
